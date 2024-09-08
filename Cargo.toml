@@ -1,0 +1,13 @@
+[package]
+name = "sveru-macro"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+name = "sveru_macro"
+path = "lib.rs"
+
+[dependencies]
+syn = { version = "2.0.66", features = ["full"] }
+quote = "1.0.36"
