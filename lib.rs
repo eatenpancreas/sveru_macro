@@ -49,7 +49,7 @@ pub fn endpoint(ep: TokenStream, func: TokenStream) -> TokenStream {
   let route_raw = format!("../bindings/{}/{}.ts", route, method_upper);
   let route_literal = LitStr::new(route_raw.as_str(), Span::call_site().into());
   let expanded = quote! {
-    #[derive(Clone, Debug, serde::Serialize, serde::Deserialize, ts_rs::TS)]
+    #[derive(Clone, Debug, serde::Serialize, ts_rs::TS)]
     #[ts(export, export_to = #route_literal)]
     struct #struct_name {
       in_type: #in_t,
